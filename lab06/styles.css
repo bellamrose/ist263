@@ -1,0 +1,24 @@
+/* Global font for everything via inheritance */
+body {
+  /* pick a web-safe stack you like, e.g.: */
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  line-height: 1.5; /* nice readability */
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* Headings: color + sizes with em units */
+h1, h2 { color: rgb(234, 53, 33); }
+
+h1 { font-size: 2em; /* try 1.8–2.4em based on your font */ }
+h2 { font-size: 1.5em; /* slightly smaller than h1 */ }
+
+/* Zebra rows: apply to even rows you mark up with class="evenrow" */
+.evenrow { background-color: #f2f2f2; }
+
+/* Optional: make tables breathe a bit */
+table { border-collapse: collapse; width: 100%; max-width: 900px; }
+td, th { border: 1px solid #ddd; padding: 0.6rem; text-align: left; }
+
+/* A small, tasteful default for paragraphs and lists */
+p, li { font-size: 1em; }
