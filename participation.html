@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 40%;
+  background-color: #F4F4F4; /* ✅ Card background */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.text-container h3 {
+  color: #D44500; /* ✅ Header color */
+}
+
+.button {
+  background-color: #005BBB; /* ✅ Button color */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* ✅ Pseudo-selector for hover */
+.button:hover {
+  background-color: #FFA500; /* Button changes on hover */
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Card</h2>
+
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/en/d/d3/Otto_the_Orange_logo.svg" alt="Otto" style="width:100%">
+  <div class="text-container">
+    <h3><b>Otto the Orange</b></h3> 
+    <p>Syracuse University Mascot</p>
+    <button class="button">Meet Otto</button>
+  </div>
+</div>
+
+</body>
+</html>
