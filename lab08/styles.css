@@ -19,6 +19,27 @@ Nav link color:  #3D405B
   --navlink: #3D405B;
 }
 
+/* ===== Banner Section ===== */
+.banner {
+  background-color: #E0D8C3;          /* muted taupe banner background */
+  color: #3D2B1F;                     /* dark brown text */
+  text-align: center;                 /* center heading and tagline */
+  padding: 60px 20px 40px;            /* top/right-bottom/left spacing */
+  border-bottom: 4px solid #A5A58D;   /* subtle bottom accent line */
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.banner p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #4B3832;                     /* softer brown for subtext */
+}
+
 * { box-sizing: border-box; }
 
 body {
