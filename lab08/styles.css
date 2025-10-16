@@ -1,0 +1,114 @@
+/* ===== Color Palette: muted earth tones (from your Lab 07) =====
+Body background: #F4F1EA
+Text:            #4B3832
+Link:            #6B705C
+Headings:        #3D2B1F
+Nav background:  #E0D8C3
+Nav hover box:   #A5A58D
+Nav link color:  #3D405B
+=============================================================== */
+
+/* ===== Global ===== */
+:root {
+  --bg: #F4F1EA;
+  --text: #4B3832;
+  --link: #6B705C;
+  --head: #3D2B1F;
+  --navbg: #E0D8C3;
+  --navhover: #A5A58D;
+  --navlink: #3D405B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Descendant selector for nav links ===== */
+nav {
+  background-color: var(--navbg);
+  padding: 10px;               /* box model: padding */
+  margin-bottom: 30px;         /* box model: margin-bottom */
+}
+nav a {                        /* descendant selector */
+  color: var(--navlink);
+  text-decoration: none;
+  padding: 4px 8px;
+}
+nav a:hover {                  /* descendant + pseudo selector */
+  background-color: var(--navhover);
+}
+
+h1, h2, h3 { color: var(--head); }
+
+main { padding: 0 16px 24px; }
+header, footer { padding: 0 16px; }
+
+/* ===== Float utilities for footer quote exercise ===== */
+.left { float: left; }
+.right { float: right; }
+footer::after { content: ""; display: block; clear: both; }
+
+/* ===== Cards and layout helpers (used in contact page) ===== */
+.row {
+  display: flex;            /* Flexbox parent */
+  gap: 20px;                /* space between columns */
+  margin: 20px 16px;        /* space to page edges */
+}
+
+.col {
+  flex: 1 1 0;
+}
+
+.card {
+  background: #ffffffaa;    /* subtle card look on earth-tone bg */
+  background: #F4F1EA;      /* satisfies “background colors on both boxes” */
+  padding: 20px;            /* space inside containers */
+  border-radius: 12px;      /* rounded corners */
+  border: 1px solid #e3dfd6;
+}
+
+/* Buttons & form basics */
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #c9c3b6;
+  background: #E0D8C3;
+  cursor: pointer;
+}
+button:hover { background: #d6ccb3; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: var(--text);
+}
+
+/* Map wrapper so iframe fills space and doesn’t look squished */
+.map-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+}
+.map-wrap iframe {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 800px) {
+  .row { flex-direction: column; }
+  .left, .right { float: none; }
+  footer p { margin: 8px 0; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 08 Practice — Floats & Flexbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Embedded stylesheet per lab directions -->
+  <style>
+    /* ===== Float Practice ===== */
+    .float-left { float: left; margin: 0 12px 8px 0; }
+    .clear { clear: both; }
+
+    /* Make paragraph text readable */
+    body { font-family: system-ui, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+
+    /* ===== Flexbox Part ===== */
+    .part2 { display: flex; }
+    .part2 article { margin: 10px; padding: 12px; border-radius: 10px; background: #F4F1EA; }
+    .article1 { flex: 2; order: 3; background: #E0D8C3; padding: 16px; } /* bigger, moves to the end */
+    .article2 { flex: 1; order: 2; }
+    .article3 { flex: 1; order: 1; }
+
+    /* spacing demo */
+    h2 { margin-top: 28px; }
+
+    /* Responsive fallback: stack on small screens */
+    @media (max-width: 700px) {
+      .part2 { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a> |
+    <a href="skills.html">Skills</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="practice.html">Practice</a>
+  </nav>
+
+  <h1>Float Practice</h1>
+  <article>
+    <img class="float-left" src="https://via.placeholder.com/220x160?text=Float+Me" alt="Sample float image">
+    <p>
+      This paragraph wraps around an image floated to the left. The margin on the image creates
+      space so text does not look squished. Keep writing a few more sentences so you can see the
+      wrap effect across multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Integer a luctus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+    </p>
+    <div class="clear"></div>
+  </article>
+
+  <h2>The Flexbox Part</h2>
+  <div class="part2">
+    <article class="article1">
+      <h3>Article 1</h3>
+      <p>This one is most important, so it gets more space (flex: 2) and rounded corners.</p>
+    </article>
+    <article class="article2">
+      <h3>Article 2</h3>
+      <p>Standard size (flex: 1).</p>
+    </article>
+    <article class="article3">
+      <h3>Article 3</h3>
+      <p>Standard size (flex: 1), and we changed visual order with <code>order</code>.</p>
+    </article>
+  </div>
+</body>
+</html>
