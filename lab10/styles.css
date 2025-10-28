@@ -162,3 +162,55 @@ aside h2 {
     text-align: center;
   }
 }
+/* --- Responsive additions (Lab 10) --- */
+
+/* 4A. Base nav styles (adjust if you already have similar rules) */
+nav { 
+  display: block; 
+  text-align: center; 
+  margin: 1rem 0;
+}
+
+nav a { 
+  text-decoration: none; 
+  padding: 0.5rem 0.75rem; 
+  display: inline-block;
+}
+
+/* 4B. Flexible images (used on index hero or any large image) */
+.fluid-img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+/* 4C. Contact page: form + map wrap */
+.contact-wrap {
+  display: flex;
+  flex-wrap: wrap;      /* lets children wrap on smaller screens */
+  gap: 1rem;
+}
+
+.contact-wrap > * {
+  flex: 1 1 320px;      /* grow/shrink; prefer ~320px per column before wrapping */
+  min-width: 280px;
+}
+
+/* Map sizing */
+.map {
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+}
+
+/* 4D. Media query to stack nav links on tablets/phones */
+@media (max-width: 900px) {
+  nav a {
+    display: block;     /* stack links vertically */
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+  nav .pipe {
+    display: none;      /* hide the | when stacked */
+  }
+}

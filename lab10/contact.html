@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   <title>Bella Rose — Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <form>...</form>
+  <iframe class="map" src="..."></iframe>
+</div>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav aria-label="Primary">
-    <a href="index.html">Home</a> |
-    <a href="skills.html">Skills</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="practice.html">Practice</a>
-  </nav>
+  <nav>
+  <a href="index.html">Home</a> <span class="pipe">|</span>
+  <a href="skills.html">Skills</a> <span class="pipe">|</span>
+  <a href="contact.html">Contact</a>
+</nav>
 
   <header>
     <h1>Contact</h1>
@@ -68,6 +70,20 @@
         </div>
       </section>
     </div>
+    <div class="contact-wrap">
+  <!-- Your contact form starts -->
+  <form>
+    <!-- your existing form fields -->
+  </form>
+  <!-- Your contact form ends -->
+
+  <!-- Your map: make sure it has the class="map" and is NOT inside another extra wrapper -->
+  <iframe class="map"
+          src="YOUR_GOOGLE_MAPS_EMBED_URL"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
   </main>
 
   <footer>
