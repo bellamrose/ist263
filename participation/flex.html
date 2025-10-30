@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Unit 8 Flex — SU Footer (Flexbox)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f2f2f2;
+      --ink: #111;
+      --muted: #666;
+      --link: #0055aa;
+    }
+
+    /* page framing just to match the demo feel */
+    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, Arial, sans-serif; color: var(--ink); background: #ddd; }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    .content { flex: 1 0 auto; }
+    .su-footer-wrap { background: var(--bg); }
+
+    /* ===== footer proper ===== */
+    .su-footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* top row: logo (optional) */
+    .footer-brand { display: flex; align-items: center; gap: .75rem; }
+    .footer-brand img { height: 36px; width: auto; display: block; }
+    .footer-brand .addr { font-size: .95rem; color: var(--ink); }
+
+    /* columns area */
+    .footer-cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .col {
+      flex: 1 1 220px;    /* grow, shrink, base width */
+      min-width: 200px;
+    }
+    .col h3 {
+      margin: 0 0 .5rem;
+      font-size: 1rem;
+    }
+    .col ul { margin: 0; padding: 0; list-style: none; }
+    .col li { margin: .25rem 0; }
+    a { color: var(--ink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* bottom bar: social + legal */
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .social a {
+      display: inline-flex;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      align-items: center; justify-content: center;
+      background: #fff; border: 1px solid #e0e0e0;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .8rem;
+      color: var(--ink);
+    }
+    .legal a { color: var(--link); }
+
+    /* responsive tweaks */
+    @media (max-width: 700px) {
+      .footer-brand { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { gap: .75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="content"></main>
+
+    <div class="su-footer-wrap">
+      <footer class="su-footer" aria-labelledby="footer-heading">
+        <div class="footer-brand">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Syracuse_Orange_block_S_logo.svg" alt="Syracuse University logo" />
+          <div class="addr">
+            Syracuse University<br />
+            900 South Crouse Ave.<br />
+            Syracuse, NY 13244<br />
+            Phone: +1.315.443.1870
+          </div>
+        </div>
+
+        <div class="footer-cols" role="navigation" aria-label="footer">
+          <section class="col">
+            <h3>Popular</h3>
+            <ul>
+              <li><a href="#">Academic Calendar</a></li>
+              <li><a href="#">Campus Map</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Libraries</a></li>
+              <li><a href="#">Majors and Minors</a></li>
+              <li><a href="#">Visits and Tours</a></li>
+            </ul>
+          </section>
+
+          <section class="col">
+            <h3>A–Z</h3>
+            <ul>
+              <li><a href="#">Find People</a></li>
+              <li><a href="#">Academic Departments</a></li>
+              <li><a href="#">Schools and Colleges</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Search</a></li>
+            </ul>
+          </section>
+
+          <section class="col">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="#">Admissions</a></li>
+              <li><a href="#">Financial Aid</a></li>
+              <li><a href="#">Emergency Contacts</a></li>
+              <li><a href="#">Human Resources</a></li>
+              <li><a href="#">Website Feedback</a></li>
+              <li><a href="#">Make a Gift</a></li>
+            </ul>
+          </section>
+
+          <section class="col">
+            <h3>Login</h3>
+            <ul>
+              <li><a href="#">MySlice</a></li>
+              <li><a href="#">Blackboard</a></li>
+              <li><a href="#">Student Email</a></li>
+              <li><a href="#">Faculty and Staff Email</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="social" aria-label="social links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="YouTube">yt</a>
+          </div>
+          <div class="legal">
+            © Syracuse University. Knowledge crowns those who seek her.
+            <a href="#">Accessibility</a>
+            <a href="#">Accreditation</a>
+            <a href="#">Emergencies</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

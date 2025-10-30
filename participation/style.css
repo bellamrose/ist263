@@ -1,0 +1,46 @@
+/* remove old floats */
+.floatleft, .floatright { float: none; }
+
+/* container layout */
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  align-items: flex-start;
+}
+
+/* image / figure */
+.media {
+  flex: 0 0 260px;
+  max-width: 100%;
+}
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.media figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+/* text block */
+.text {
+  flex: 1 1 400px;
+  min-width: 250px;
+}
+
+/* keep left/right order visually */
+.floatleft { order: 0; }     /* image first, text second */
+.floatright { order: 2; }    /* image last, text first */
+
+/* responsive layout for narrow screens */
+@media (max-width: 700px) {
+  .block { flex-direction: column; }
+  .floatleft, .floatright { order: 0; }
+  .media { flex-basis: 100%; }
+}
