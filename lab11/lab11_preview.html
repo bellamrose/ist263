@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shell Game Preview</title>
+  <script>
+    function WinnerMessage() {
+      document.getElementById("message").innerHTML = "🎉 You Won!";
+    }
+
+    function TryAgain() {
+      document.getElementById("message").innerHTML = "❌ Wrong Shell - Try Again";
+    }
+
+    function ShuffleShells() {
+      document.getElementById("first").style.order = Math.floor((Math.random() * 3) + 2);
+    }
+  </script>
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    img {
+      width: 150px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    #message {
+      font-size: 20px;
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body onload="ShuffleShells()">
+
+  <h1>Pick the Winning Shell!</h1>
+
+  <div class="container">
+    <img id="first" src="https://picsum.photos/150?random=1" alt="Shell 1" onclick="WinnerMessage();">
+    <img id="second" src="https://picsum.photos/150?random=2" alt="Shell 2" onclick="TryAgain();">
+    <img id="third" src="https://picsum.photos/150?random=3" alt="Shell 3" onclick="TryAgain();">
+  </div>
+
+  <div id="message"></div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shell Game with Alerts</title>
+  <script>
+    function WinnerMessage() {
+      alert("You Won!");
+    }
+
+    function TryAgain() {
+      alert("Wrong Shell - Try Again");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Pick the Winning Shell!</h1>
+
+  <img src="https://picsum.photos/150?random=1" alt="Shell 1" onclick="WinnerMessage();">
+  <img src="https://picsum.photos/150?random=2" alt="Shell 2" onclick="TryAgain();">
+  <img src="https://picsum.photos/150?random=3" alt="Shell 3" onclick="TryAgain();">
+
+</body>
+</html>
