@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Participation – JavaScript Part 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="school">Syracuse University</div>
+
+  <script>
+    // when the div is clicked, change the text and color
+    document.getElementById("school").onclick = function() {
+      document.getElementById("school").innerHTML = "Orange Nation";
+      document.getElementById("school").style.color = "orange";
+    };
+  </script>
+</body>
+</html>
