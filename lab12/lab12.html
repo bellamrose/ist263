@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 12 – Planet Slideshow</title>
+  <style>
+    body { font-family: Verdana, Geneva, Tahoma, sans-serif; background:#111; color:#fff; }
+    #slideshow-container { width: 1200px; margin: auto; background:#000; }
+
+    /* layout with floats per lab requirement */
+    #bigimages { float: left; width: 50%; text-align: center; }
+    #planetinfo { float: right; width: 45%; padding: 20px; }
+    #thumbnails { clear: both; width: 840px; margin: 20px auto; text-align: center; }
+    #thumbnails img { width: 100px; margin: 5px; cursor: pointer; }
+
+    /* show Mercury only on load; hide others */
+    #venus, #earth, #mars, #jupiter, #saturn, #uranus, #neptune,
+    #venusinfo, #earthinfo, #marsinfo, #jupiterinfo, #saturninfo, #uranusinfo, #neptuneinfo {
+      display: none;
+    }
+  </style>
+  <script>
+    function PlanetsOff() {
+      // turn off all large images
+      document.getElementById('mercury').style.display = 'none';
+      document.getElementById('venus').style.display = 'none';
+      document.getElementById('earth').style.display = 'none';
+      document.getElementById('mars').style.display = 'none';
+      document.getElementById('jupiter').style.display = 'none';
+      document.getElementById('saturn').style.display = 'none';
+      document.getElementById('uranus').style.display = 'none';
+      document.getElementById('neptune').style.display = 'none';
+      // turn off all info blocks
+      document.getElementById('mercuryinfo').style.display = 'none';
+      document.getElementById('venusinfo').style.display = 'none';
+      document.getElementById('earthinfo').style.display = 'none';
+      document.getElementById('marsinfo').style.display = 'none';
+      document.getElementById('jupiterinfo').style.display = 'none';
+      document.getElementById('saturninfo').style.display = 'none';
+      document.getElementById('uranusinfo').style.display = 'none';
+      document.getElementById('neptuneinfo').style.display = 'none';
+    }
+
+    // one function per planet to turn it on (as the lab specifies)
+    function MercuryOn() {
+      document.getElementById('mercury').style.display = 'block';
+      document.getElementById('mercuryinfo').style.display = 'block';
+    }
+    function VenusOn() {
+      document.getElementById('venus').style.display = 'block';
+      document.getElementById('venusinfo').style.display = 'block';
+    }
+    function EarthOn() {
+      document.getElementById('earth').style.display = 'block';
+      document.getElementById('earthinfo').style.display = 'block';
+    }
+    function MarsOn() {
+      document.getElementById('mars').style.display = 'block';
+      document.getElementById('marsinfo').style.display = 'block';
+    }
+    function JupiterOn() {
+      document.getElementById('jupiter').style.display = 'block';
+      document.getElementById('jupiterinfo').style.display = 'block';
+    }
+    function SaturnOn() {
+      document.getElementById('saturn').style.display = 'block';
+      document.getElementById('saturninfo').style.display = 'block';
+    }
+    function UranusOn() {
+      document.getElementById('uranus').style.display = 'block';
+      document.getElementById('uranusinfo').style.display = 'block';
+    }
+    function NeptuneOn() {
+      document.getElementById('neptune').style.display = 'block';
+      document.getElementById('neptuneinfo').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div id="slideshow-container">
+    <div id="bigimages">
+      <!-- note: source file name uses 'mecury.jpg' per provided assets -->
+      <img src="https://laferger.github.io/ist263/images/mecury.jpg" alt="mercury" id="mercury">
+      <img src="https://laferger.github.io/ist263/images/venus.jpg" alt="venus" id="venus">
+      <img src="https://laferger.github.io/ist263/images/earth.jpg" alt="earth" id="earth">
+      <img src="https://laferger.github.io/ist263/images/mars.jpg" alt="mars" id="mars">
+      <img src="https://laferger.github.io/ist263/images/jupiter.jpg" alt="jupiter" id="jupiter">
+      <img src="https://laferger.github.io/ist263/images/saturn.jpg" alt="saturn" id="saturn">
+      <img src="https://laferger.github.io/ist263/images/uranus.jpg" alt="uranus" id="uranus">
+      <img src="https://laferger.github.io/ist263/images/neptune.jpg" alt="neptune" id="neptune">
+    </div>
+
+    <div id="planetinfo">
+      <h1>Planets Slideshow</h1>
+      <div id="mercuryinfo">
+        <h2>Mercury</h2>
+        <p>Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 Earth days.</p>
+      </div>
+      <div id="venusinfo"><h2>Venus</h2><p>Venus is the second planet from the Sun, named after the Roman goddess of love and beauty.</p></div>
+      <div id="earthinfo"><h2>Earth</h2><p>Earth is the third planet from the Sun and the only one known to harbor life.</p></div>
+      <div id="marsinfo"><h2>Mars</h2><p>Mars is a terrestrial planet with a thin atmosphere and polar ice caps.</p></div>
+      <div id="jupiterinfo"><h2>Jupiter</h2><p>Jupiter is the fifth planet from the Sun and the largest in the Solar System.</p></div>
+      <div id="saturninfo"><h2>Saturn</h2><p>Saturn is the sixth planet from the Sun and is known for its rings.</p></div>
+      <div id="uranusinfo"><h2>Uranus</h2><p>Uranus is the seventh planet from the Sun with a blue-green color due to methane.</p></div>
+      <div id="neptuneinfo"><h2>Neptune</h2><p>Neptune is the eighth planet from the Sun with strong winds and storms.</p></div>
+    </div>
+
+    <div id="thumbnails">
+      <img src="https://laferger.github.io/ist263/images/mecury.jpg" alt="mercury" onclick="PlanetsOff();MercuryOn();">
+      <img src="https://laferger.github.io/ist263/images/venus.jpg" alt="venus" onclick="PlanetsOff();VenusOn();">
+      <img src="https://laferger.github.io/ist263/images/earth.jpg" alt="earth" onclick="PlanetsOff();EarthOn();">
+      <img src="https://laferger.github.io/ist263/images/mars.jpg" alt="mars" onclick="PlanetsOff();MarsOn();">
+      <img src="https://laferger.github.io/ist263/images/jupiter.jpg" alt="jupiter" onclick="PlanetsOff();JupiterOn();">
+      <img src="https://laferger.github.io/ist263/images/saturn.jpg" alt="saturn" onclick="PlanetsOff();SaturnOn();">
+      <img src="https://laferger.github.io/ist263/images/uranus.jpg" alt="uranus" onclick="PlanetsOff();UranusOn();">
+      <img src="https://laferger.github.io/ist263/images/neptune.jpg" alt="neptune" onclick="PlanetsOff();NeptuneOn();">
+    </div>
+  </div>
+</body>
+</html>
