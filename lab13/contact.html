@@ -8,7 +8,9 @@
 </head>
 <body>
 
-  <nav>
+  <a class="skip" href="#content">Skip to Content</a>
+
+  <nav aria-label="Main navigation">
     <a href="index.html">Home</a> <span class="pipe">|</span>
     <a href="skills.html">Skills</a> <span class="pipe">|</span>
     <a href="contact.html" aria-current="page">Contact</a>
@@ -18,9 +20,8 @@
     <h1>Contact</h1>
   </header>
 
-  <main>
+  <main id="content">
 
-    <!-- Simple info row (optional) -->
     <section>
       <h2>Address</h2>
       <address>
@@ -38,9 +39,7 @@
       </ul>
     </section>
 
-    <!-- FORM + MAP: this is the part graders look for -->
     <div class="contact-wrap">
-      <!-- Form is a direct child -->
       <form aria-labelledby="form-heading">
         <h2 id="form-heading">Send a Message</h2>
 
@@ -56,7 +55,6 @@
         <button type="submit">Send</button>
       </form>
 
-      <!-- Map iframe is also a direct child -->
       <iframe
         class="map"
         title="Syracuse University Map"
