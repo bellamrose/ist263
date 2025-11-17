@@ -1,5 +1,5 @@
 /* ========================================
-   Bella Rose — Lab 10 Stylesheet (All Pages)
+   Bella Rose — Stylesheet (Labs 10–13)
    Consistent with Lab 08/09 look, fully responsive
    ======================================== */
 
@@ -27,6 +27,7 @@ body{
   background:var(--bg);
   color:var(--text);
   font-family:system-ui, Arial, sans-serif;
+  font-size:1rem;          /* relative font size for accessibility */
   line-height:1.6;
 }
 
@@ -49,6 +50,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline:3px solid var(--hover);
   outline-offset:2px;
   border-radius:6px;
+}
+
+/* Skip to content link (Lab 13 a11y) */
+.skip{
+  position:absolute;
+  left:-999px;
+  top:10px;
+  background-color:#ffffff;
+  color:#000000;
+  padding:0.5rem 1rem;
+  border:1px solid #000000;
+  border-radius:6px;
+  text-decoration:none;
+  z-index:1000;
+}
+.skip:focus{
+  left:10px;
 }
 
 /* ===== Navigation (shared on all pages) ===== */
@@ -90,7 +108,7 @@ nav a:hover{
   opacity:0.9;
 }
 
-/* Generic banner header used on Skills/Contact (optional) */
+/* Generic banner header used on Skills/Contact */
 .banner{
   background:var(--navbg);
   color:var(--head);
@@ -110,8 +128,56 @@ nav a:hover{
   padding:0 12px;
 }
 
-/* ===== Skills Page Layout ===== */
-/* Outer container (icons + aside) */
+/* ===== Skills Page Layout (new structure) ===== */
+/* main.skills-layout holds section + aside */
+.skills-layout{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  align-items:flex-start;
+  margin:40px;
+}
+
+/* Main skills content */
+.skills-layout > section{
+  flex:2 1 360px;
+  min-width:280px;
+}
+
+/* Aside listing other strengths */
+aside,
+.other-skills{
+  flex:1 1 260px;
+  min-width:240px;
+  background:var(--navbg);
+  color:var(--head);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+aside h2, .other-skills h2{ text-align:center; }
+
+/* Table on skills page */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:1rem 0;
+}
+caption{
+  text-align:left;
+  font-weight:600;
+  margin-bottom:0.5rem;
+}
+th, td{
+  border:1px solid var(--border);
+  padding:0.5rem 0.75rem;
+  text-align:left;
+}
+th{
+  background-color:var(--card);
+}
+
+/* ===== Old skills flex helpers (kept if needed later) ===== */
 .flexbox2{
   display:flex;
   flex-wrap:wrap;          /* key for Lab 10 */
@@ -143,19 +209,6 @@ nav a:hover{
   min-width:120px;
 }
 .skill img{ width:80px; margin:0 auto 10px auto; }
-
-/* Aside listing other skills */
-aside,
-.other-skills{
-  flex:1 1 260px;          /* sits to the right, stacks when narrow */
-  min-width:240px;
-  background:var(--navbg);
-  color:var(--head);
-  padding:20px;
-  border-radius:12px;
-  border:1px solid var(--border);
-}
-aside h2, .other-skills h2{ text-align:center; }
 
 /* ===== Contact Page ===== */
 /* Form + Map must be direct children of this wrapper */
@@ -230,7 +283,11 @@ footer::after{ content:""; display:block; clear:both; }
 
 /* 2) Tighten page layout on narrow screens */
 @media (max-width:800px){
-  .flexbox2{ flex-direction:column; margin:24px; }
+  .flexbox2,
+  .skills-layout{
+    flex-direction:column;
+    margin:24px;
+  }
   .contact-wrap{ margin:0 24px 24px; }
   .flexbox1{ justify-content:center; }
   aside, .other-skills{ margin-top:8px; }
@@ -239,7 +296,11 @@ footer::after{ content:""; display:block; clear:both; }
 
 /* 3) Extra-small phones: prevent side scroll and make buttons comfy */
 @media (max-width:480px){
-  .flexbox2, .contact-wrap{ margin:16px; }
+  .flexbox2,
+  .skills-layout,
+  .contact-wrap{
+    margin:16px;
+  }
   .intro{ padding:0 8px; }
   button{ width:100%; }
 }
