@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Easy College Recipes</title>
+  <meta name="description" content="Easy, affordable recipes for college students with simple steps and dietary modifications.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <h1>Easy College Recipes</h1>
+    <p>Affordable, simple, and flexible meals for busy students.</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+    <section aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Cook smart, save money, and eat well</h2>
+      <figure>
+        <img src="images/cover.jpg" alt="Fresh ingredients and vegetables on a wooden table">
+        <figcaption>Recipes use shared ingredients and basic tools to fit dorm and apartment life.</figcaption>
+      </figure>
+      <p>This site gathers budget-friendly recipes that fit a student schedule. Each recipe includes simple steps, ingredient swaps, and tips for dietary needs.</p>
+      <p><a href="recipes.html">Browse all recipes</a> or try a featured dish below.</p>
+    </section>
+
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured recipes</h2>
+
+      <!-- CSS Grid "learn something new" area -->
+      <div class="recipes-grid" aria-label="Featured recipes">
+        <article class="recipe-card" aria-labelledby="feat1-heading">
+          <h3 id="feat1-heading"><a href="chicken-burrito-bowl.html">Chicken Burrito Bowl</a></h3>
+          <p>Meal-prep friendly bowls with rice, beans, and toppings using pantry ingredients.</p>
+          <a class="recipe-link" href="chicken-burrito-bowl.html">View recipe</a>
+        </article>
+
+        <article class="recipe-card" aria-labelledby="feat2-heading">
+          <h3 id="feat2-heading"><a href="salmon.html">Lemon Garlic Salmon</a></h3>
+          <p>Fast baked salmon with a bright lemon-garlic finish and roasted vegetables.</p>
+          <a class="recipe-link" href="salmon.html">View recipe</a>
+        </article>
+
+        <article class="recipe-card" aria-labelledby="feat3-heading">
+          <h3 id="feat3-heading"><a href="overnight-oats.html">Overnight Oats</a></h3>
+          <p>No-cook breakfast with oats, yogurt, and fruit that can be prepared the night before.</p>
+          <a class="recipe-link" href="overnight-oats.html">View recipe</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <time datetime="2025">2025</time> Bella Rose</p>
+  </footer>
+</body>
+</html>
